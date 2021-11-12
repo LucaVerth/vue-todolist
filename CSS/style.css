@@ -46,7 +46,7 @@ ul li i:hover{
 }
 
 .lv_customBox{
-  background-color: rgba(128, 128, 128, 0.8);
+  background-color: rgba(128, 128, 128, 0.4);
   border-radius: 10px;
   border: 1px solid #000;
   min-height: 200px;

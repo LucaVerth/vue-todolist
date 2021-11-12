@@ -19,22 +19,26 @@
           <img class="mx-3" src="img/logo-boolean.png" alt="">
           <h1>Boolean TodoList</h1>
         </div>
+        <div class="col-12">
+          <h6 class="text-center my-4" v-if="error">inserire testo di almeno 3 caratteri</h6>
+        </div>
         <div class="col-12 d-flex justify-content-center my-3">
           <div class="input-group mb-3">
             <input 
-              v-model="stringToDo"
+              @keyup.enter="insertItem"
+              v-model="stringToDo.text"
               type="text" 
               class="form-control" 
-              placeholder="Add task to list"
+              placeholder="Add task to list..."
             >
-            <button class="btn btn-outline-secondary text-light" type="button" id="button-addon2">Add to list</button>
+            <button @click="insertItem" class="btn btn-outline-secondary text-light" type="button" id="button-addon2">Add to list</button>
           </div>
         </div>
         <div class="col-12 lv_customBox">
           <ul>
-            <li v-for="item in toDoList">
+            <li v-for="(item, index) in toDoList">
               <p :class="{done: item.done}" @click="taskDone(item)" >{{ item.text }}</p>
-              <i class="fas fa-times"></i>
+              <i @click="removeItem(index)" class="fas fa-times"></i>
             </li>
             
           </ul>

@@ -19,17 +19,41 @@ const app = new Vue({
   data: {
     toDoList: [
       {
-        text: 'Example of text',
+        text: 'Esempio',
         done: false
       },
+      
     ],
-    stringToDo: '',
+    stringToDo: {
+      text: '',
+      done: false
+    },
+    error: false
 
   },
+
   methods: {
     taskDone(item){
       item.done = !item.done;
-    }
-  }
+    },
+    removeItem(index){
+      this.toDoList.splice(index, 1);
+    },
+    insertItem(){
+      if(this.stringToDo.text.length < 3){
+        this.error = true;
+        setTimeout(()=>{
+          this.error = false;
+        }, 2500);
+      }else{
+        this.toDoList.push(this.stringToDo);
+        this.stringToDo = {
+        text: '',
+        done: false
+      };
+      }
+    },
+
+  },
 
 })
