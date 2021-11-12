@@ -14,46 +14,42 @@ Predisporre un campo di input testuale e un pulsante “aggiungi”: cliccando s
 */
 
 const app = new Vue({
-  el: '#app',
+  el: "#app",
 
   data: {
     toDoList: [
       {
-        text: 'Esempio',
-        done: false
+        text: "Esempio",
+        done: false,
       },
-      
     ],
     stringToDo: {
-      text: '',
-      done: false
+      text: "",
+      done: false,
     },
-    error: false
-
+    error: false,
   },
 
   methods: {
-    taskDone(item){
+    taskDone(item) {
       item.done = !item.done;
     },
-    removeItem(index){
+    removeItem(index) {
       this.toDoList.splice(index, 1);
     },
-    insertItem(){
-      if(this.stringToDo.text.length < 3){
+    insertItem() {
+      if (this.stringToDo.text.length < 3) {
         this.error = true;
-        setTimeout(()=>{
+        setTimeout(() => {
           this.error = false;
         }, 2500);
-      }else{
+      } else {
         this.toDoList.push(this.stringToDo);
         this.stringToDo = {
-        text: '',
-        done: false
-      };
+          text: "",
+          done: false,
+        };
       }
     },
-
   },
-
-})
+});

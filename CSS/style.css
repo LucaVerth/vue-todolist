@@ -1,10 +1,11 @@
-body{
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   background-color: brown;
   color: #fff;
 }
 
-#app{
+#app {
   width: 600px;
   margin: 0 auto;
 }
@@ -14,15 +15,15 @@ body{
   height: 120px;
 }
 
-#head img{
+#head img {
   height: 100%;
 }
 
-ul{
+ul {
   padding-left: unset;
 }
 
-ul li{
+ul li {
   display: flex;
   justify-content: space-between;
   height: 30px;
@@ -30,29 +31,29 @@ ul li{
   border-bottom: 1px solid #000;
   cursor: pointer;
 }
-ul li:last-child{
+ul li:last-child {
   border-bottom: none;
 }
 
-ul li i{
+ul li i {
   font-size: 1.5rem;
   opacity: 0.5;
   cursor: pointer;
   transition: all 0.5s;
 }
 
-ul li i:hover{
+ul li i:hover {
   opacity: 1;
 }
 
-.lv_customBox{
+.lv_customBox {
   background-color: rgba(128, 128, 128, 0.4);
   border-radius: 10px;
   border: 1px solid #000;
   min-height: 200px;
 }
 
-.done{
+.done {
   text-decoration: line-through;
   color: grey;
 }
